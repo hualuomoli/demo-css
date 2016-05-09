@@ -1,0 +1,325 @@
+@charset "UTF-8";
+
+/** body */
+$font-size: 13px;
+$header-height: 30px;
+$header-color: #fff;
+
+* {
+  padding: 0px;
+  margin: 0px;
+
+  ul {
+    list-style: none;
+  }
+
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+/** body */
+body {
+  width: 100%;
+  min-width: 1000px;
+  height: 100%;
+  font-size: $font-size;
+  background: url('../image/bg.jpg');
+  background-size: 100% 100%;
+}
+
+/** header */
+header {
+  width: 100%;
+  height: $header-height;
+  min-width: 1000px;
+  border-bottom: 1px solid #000;
+  background: #A0A8B6;
+  color: #fff;
+
+  a {
+    color: #fff;
+  }
+
+  /** 初始化隐藏 */
+  .weather-setting,
+  .products {
+    display: none;
+  }
+
+  /** 设置(居中)行高与高度相同 */
+  .news,
+  .menu {
+    height: 100%;
+    line-height: $header-height;
+    color: $header-color;
+  }
+
+  /** 消息 */
+  .news {
+    float: left;
+    font-size: 0.98em;
+    padding-left: 20px;
+
+    .weather,
+    .vertical,
+    .msg {
+      height: 100%;
+      display: inline-block;
+      line-height: $header-height;
+      float: left;
+    }
+
+    /** 天气 */
+    .weather {
+      position: relative;
+
+      .icon {
+        height: 100%;
+
+        img {
+          width: 18px;
+          height: 18px;
+          margin-top: 6px;
+          background-image: url('../image/icon.png');
+        }
+
+      }
+
+      .name {
+        color: #BADC56;
+      }
+
+      &:hover .weather-setting {
+        display: block;
+      }
+
+      /** 设置 */
+      .weather-setting {
+        width: 600px;
+        height: 200px;
+        position: absolute;
+        top: $header-height;
+        left: -20px;
+        z-index: 10;
+        background: #ffffff;
+        color: #000;
+
+        a {
+          color: #000;
+        }
+
+        /** 样式 */
+        .arrow {
+          width: 10px;
+          height: 10px;
+          margin: -5px 0 0 70px;
+          background: url('../image/weather-setting.png') no-repeat 0 -90px;
+        }
+
+        .content,
+        .config {
+          width: 100%;
+          height: 100%；
+        }
+
+        /** 内容 */
+        .content {
+          .title {
+            height: 30px;
+            line-height: 30px;
+            padding: 0 25px 0 20px;
+
+            .desc {
+              float: left;
+              color: #000;
+
+              .nongli {
+                margin-left: 3px;
+                color: #999999;
+              }
+
+              .new-seven {
+                margin-left: 15px;
+
+                a {
+                  color: #0079F4;
+                }
+
+              }
+
+            }
+
+            /** 设置 */
+            .icon {
+              float: right;
+              padding-left: 13px;
+              cursor: pointer;
+              background: url("../image/weather-setting.png") no-repeat -36px -94px;
+            }
+
+          }
+
+          /** 下划线 */
+          .divid {
+            height: 0;
+            width: 100%;
+            margin: 5px 0;
+            border-top: 1px solid #D6D6D6;
+          }
+
+          /** 七天天气 */
+          .seven-day {
+            list-style: none;
+
+            li {
+              display: inline-block;
+              float: left;
+              width: 120px;
+              line-height: 25px;
+
+              div {
+                text-align: center;
+              }
+
+              img {
+                vertical-align: middle;
+                margin-left: 36px;
+              }
+
+            }
+
+          }
+
+        }
+
+        .config {
+          background: green;
+        }
+
+      }
+
+    }
+
+    /* 垂直线 */
+    .vertical {
+      margin: 0 10px;
+    }
+
+    /* 信息 */
+    .msg ul li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+  }
+
+  /* 菜单 */
+  .menu {
+    float: right;
+
+    .business,
+    .user,
+    .setting,
+    .more {
+      display: inline-block;
+      line-height: $header-height;
+    }
+
+    /** 业务菜单 */
+    .business {
+      font-size: 1.1em;
+
+      li {
+        display: inline-block;
+        margin: 0 10px;
+      }
+
+    }
+
+    /** 更多 */
+    .more {
+      width: 90px;
+      height: 100%;
+      line-height: $header-height;
+      text-align: center;
+      background: #398BFB;
+
+      &:hover {
+        background: #fff;
+      }
+
+      &:hover a {
+        color: #000;
+      }
+
+      &:hover .products {
+        display: block;
+      }
+
+      /** 更多产品 */
+      .products {
+        width: 100%;
+        height: 600px;
+        min-height: 600px;
+        max-height: 1000px;
+        float: right;
+        position: relative;
+        background: #fff;
+
+        ul {
+          list-style: none;
+
+          li {
+            display: block;
+            height: 70px;
+            width: 100%;
+            padding: 10px 0;
+
+            img,
+            .desc {
+              display: block;
+              width: 100%;
+            }
+
+            img {
+              width: 48px;
+              height: 48px;
+              margin: 0 auto;
+            }
+
+            .desc {
+            }
+
+          }
+
+        }
+
+        .divid {
+          height: 0;
+          width: 100%;
+          margin: 5px 0;
+          border-top: 1px solid #D6D6D6;
+        }
+
+        .all {
+          width: 100%;
+          color: #000;
+          text-align: center;
+          cursor: pointer;
+
+          span {
+            margin-left: 5px;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
